@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Added</title>
+
+    <!-- Include the CSS code directly -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+           font-family: "Times New Roman",serif;
+            background-image: url('https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/brain-training-books.jpg?width=595&height=400&name=brain-training-books.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+.container {
+    width: 35%;
+    padding: 20px;
+    margin-top: 5px;  /* Adjust margin-top to bring the container higher */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: darkred;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .button-large-red {
+            background-color: firebrick;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-large-red:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Book Added Successfully</h1>
+        <p>The new book has been added to the database.</p>
+
+        <!-- Buttons to navigate to different pages -->
+        <div class="button-group">
+            <a href="/addbook" class="button-large-red" aria-label="Add another book">Add Another Book</a>
+           <button class="button-large-red" onclick="window.location.href='/books';">
+    View Books
+</button>
+
+        <a href="/home" class="button-large-red" aria-label="Go to home">Go to Home</a>
+
+        </div>
+    </div>
+</body>
+
+</html>

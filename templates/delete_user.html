@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete User</title>
+    <style>
+
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgrey;
+
+        }
+
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: darkgray;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px darkgray;
+        }
+
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+
+
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Confirm Delete User</h2>
+        <p>Are you sure you want to delete the user with the following details?</p>
+
+        <p><strong>User ID:</strong> {{ user['user_id'] }}</p>
+        <p><strong>Name:</strong> {{ user['name'] }}</p>
+        <p><strong>Phone:</strong> {{ user['phone'] }}</p>
+        <p><strong>Email:</strong> {{ user['email'] }}</p>
+        <p><strong>Role:</strong> {{ user['role'] }}</p>
+
+        <!-- Form to handle user deletion -->
+<form action="{{ url_for('delete_user', user_id=user['user_id']) }}" method="POST">
+    <button type="submit">Yes, Delete</button>
+    <a href="{{ url_for('show_users') }}">
+        <button type="button">Cancel</button>
+    </a>
+</form>
+
+    </div>
+</body>
+</html>

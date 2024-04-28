@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Search</title>
+    <style>
+        /* Common styles */
+        /* Common styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    min-height: 100vh; /* Ensure body is at least as tall as the viewport */
+    overflow: auto; /* Allow scrolling */
+}
+
+/* html element */
+html {
+    height: auto;
+    overflow: auto; /* Allow scrolling */
+}
+
+
+        /* Container */
+        .container {
+            width: 50%;
+            padding: 20px;
+            min-height: 80vh;
+            margin: 20px 0;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Input and Button styles */
+        input[type="text"], button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+
+        /* Submit button style */
+        button[type="submit"] {
+            background-color: darkred;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+        }
+
+        button[type="submit"]:hover {
+            background-color: red;
+        }
+
+        /* Headings */
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 1.8rem;
+        }
+
+        /* Search results header */
+        h2 {
+            margin-top: 20px;
+            color: darkred;
+            text-align: center;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        /* Alternating row colors for better readability */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Book Search</h1>
+
+        <!-- Search Form -->
+        <form action="/searchbooks" method="get">
+            <!-- Author search field -->
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" placeholder="Enter author..." aria-label="Enter author's name">
+
+            <!-- Language search field -->
+            <label for="language">Language:</label>
+            <input type="text" name="language" id="language" placeholder="Enter language..." aria-label="Enter book's language">
+
+            <!-- Title search field -->
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" placeholder="Enter title..." aria-label="Enter book's title">
+
+            <!-- Submit button -->
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Search Results -->
+        <h2>Search Results:</h2>
+
+        {% if results %}
+        <table>
+            <tr>
+                <th>Author</th>
+                <th>Title</th>
+                <th>Language</th>
+                <th>Availability</th>
+            </tr>
+            {% for book in results %}
+            <tr>
+                <td>{{ book.author }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.language }}</td>
+                <td>
+                    {% if book.is_checked_out %}
+                        Checked out (Due date: {{ book.due_date }})
+                    {% else %}
+                        Available
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No results found for your search.</p>
+        {% endif %}
+    </main>
+</body>
+
+</html>

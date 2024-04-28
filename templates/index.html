@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add a New Book</title>
+    <style>
+        /* Common styles */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/brain-training-books.jpg?width=595&height=400&name=brain-training-books.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Container */
+        .container {
+            width: 35%;
+            padding: 20px;
+            margin-bottom: 110px;
+            border-radius: 8px;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Input and Button styles */
+        input[type="text"], button[type="submit"] {
+            width: 100%; /* Set the width of inputs and button to 100% */
+            padding: 12px; /* Adjust padding as needed */
+            border-radius: 5px; /* Border radius for rounded corners */
+            box-sizing: border-box; /* Ensures consistent sizing */
+        }
+
+        /* Submit button style */
+        button[type="submit"] {
+            background-color: darkred;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Button hover effect */
+        button[type="submit"]:hover {
+            background-color: red;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add a New Book</h1>
+        <form method="POST" action="/addbook">
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" placeholder="Enter the author name" required>
+
+            <label for="language">Language:</label>
+            <input type="text" name="language" id="language" placeholder="Enter the language" required>
+
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" placeholder="Enter the title" required>
+
+            <button type="submit">Add Book</button>
+
+        </form>
+    </div>
+</body>
+
+</html>

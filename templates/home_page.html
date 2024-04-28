@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Library System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Your existing CSS styles */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            font-family: "Times New Roman", serif;
+            background-image: url('https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/brain-training-books.jpg?width=595&height=400&name=brain-training-books.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #f5f5f5;
+            width: 200px;
+            padding: 20px;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            height: calc(100% - 80px);
+            z-index: 1;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 220px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header styles */
+        h5 {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 100px;
+            font-size: 3rem;
+            font-weight: bold;
+            color: darkred;
+        }
+
+        /* Quote styles */
+        p {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 1.5rem;
+            color: #444;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* Description styles */
+        .main-content p.description {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.5;
+            margin: 20px auto;
+        }
+
+        .sidebar i {
+            color: darkred;
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: firebrick;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar section -->
+    <div class="sidebar">
+        <!-- Existing sidebar links -->
+        <a href="/user"><i class="fas fa-user"></i> Manage Users</a>
+        <a href="/books"><i class="fas fa-book"></i> Books List</a>
+        <a href="/searchbooks"><i class="fas fa-search"></i> Search Books</a>
+        <a href="/addbook"><i class="fas fa-pen-fancy"></i> Add Book</a>
+        <!-- New links for Check Out/In Books and Check-Out History -->
+        <a href="/checkout_page"><i class="fas fa-book-reader"></i> Check Out/In Books</a>
+        <a href="/history_page"><i class="fas fa-history"></i> View Check-Out History</a>
+        <!-- Existing logout link -->
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Main content section -->
+    <div class="main-content">
+        <h5>You have successfully logged in to the Jalal library</h5>
+
+        <!-- Quote -->
+        <p>
+            "Life is a book and there are a thousand pages I have not read yet" (Cassandra Clare)
+        </p>
+
+        <!-- Description of library services -->
+        <p class="description">
+            Our library offers a variety of services, including book lending, e-books, audiobooks, and research assistance.
+            Explore our collections to find your next great read!
+        </p>
+
+        <!-- Links section -->
+
+    </div>
+</body>
+</html>

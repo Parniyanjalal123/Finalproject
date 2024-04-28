@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgrey;
+
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: darkgray;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px darkgray;
+        }
+
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+
+        button {
+            padding: 10px 15px;
+            background-color: darkred;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit User</h2>
+        <!-- Edit User Form -->
+        <form action="{{ url_for('edit_user', user_id=user['user_id']) }}" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ user['name'] }}" required>
+
+
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" value="{{ user['email'] }}" required>
+
+
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" value="{{ user['password'] }}" required>
+
+            <button type="submit">The changes will apply when you click button </button>
+        </form>
+    </div>
+</body>
+</html>
