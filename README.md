@@ -1,6 +1,6 @@
 # Library Management System
 
-#### This is the source code repository for the final project of the ITC 345 class. The project is a Library Management System developed using Flask, SQLAlchemy, and SQLite. It provides a web-based interface for managing library resources and users.
+ ##### This is the source code repository for the final project of the ITC 345 class. The project is a Library Management System developed using Flask, SQLAlchemy, and SQLite. It provides a web-based interface for managing library resources and users.
 
 ### Here you can find the source code [Library](https://drive.google.com/drive/folders/1cJo_XjbvUt2Rt71Ite8lUl1YH9MUdFzr?usp=drive_link).
 
